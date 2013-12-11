@@ -1,0 +1,63 @@
+\documentclass[10pt]{beamer}
+\mode<presentation>
+{
+  \usetheme{Goettingen}
+  \useinnertheme[shadow]{rounded}
+  \setbeamercovered{transparent}
+  \usefonttheme{default}
+}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{url}
+
+
+\title[Industrie-Praktikum beim Fraunhofer ESK]{Industrie-Praktikum beim \\Fraunhofer ESK}
+\author[Pascal Huber]{Pascal Huber \\ \vspace{0.2cm} \footnotesize \url{pascal.huber@uni-bonn.de}}
+\date{12.~Dezember 2013}
+\titlegraphic{\includegraphics[width=0.5\textwidth]{pics/logoFraunhofer}}
+\subject{Praktikum}
+\keywords{Praktikum, Fraunhofer}
+\logo{\includegraphics[width=0.5\textwidth]{pics/logoFraunhofer}}
+
+
+\newcommand{\mabbackslash}{\char`\\}
+\newcommand{\mabocurly}{\char`\{}
+\newcommand{\mabccurly}{\char`\}}
+
+% Frame numbers to slides
+\setbeamertemplate{footline}{%
+\begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{date in
+head/foot}%
+\hspace*{1ex} \insertframenumber{} / \inserttotalframenumber
+\end{beamercolorbox}}%
+
+
+
+\begin{document}
+%--------------------------------------------------------------
+\begin{frame}[label=mab_title]
+  \titlepage
+\end{frame}
+
+
+%--------------------------------------------------------------
+\begin{frame} \frametitle{Inhalt}
+  \tableofcontents % XXX remove me
+\end{frame}
+
+
+%--------------------------------------------------------------
+%\lstset{language=[LaTeX]TeX}
+
+%b\input{overview/overview}
+\input{fraunhofer/fraunhofer}
+ \input{esk/esk}
+ \input{praktikum/praktikum}
+ \input{mathe/mathe}
+ \input{fazit/fazit}
+
+
+\end{document}
+
+ 
