@@ -1,0 +1,20 @@
+\documentclass[a4paper, 11pt, twoside]{article}
+
+\usepackage[ngerman]{babel}
+
+\begin{document}
+\tableofcontents
+
+\section{Einleitung}
+\label{sec:einleitung}
+
+
+
+\section{Beschreibung der Praktikumsstelle}
+\label{sec:beschr-der-prakt}
+
+
+
+\end{document}
+
+
