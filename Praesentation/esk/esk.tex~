@@ -1,0 +1,105 @@
+\section{Die Fraunhofer Gesellschaft}
+%------------------------------------------------------------------------
+\mode<presentation>{
+  \begin{frame}[t] \frametitle{Forschungsprofil der Fraunhofer Gesellschaft}
+    \begin{itemize}
+    \item gr\"o\ss te Forschungseinrichtung f\"ur anwendungsorientierte Forschung in Europa 
+    \item Ziel: ergebnisorientierte Forschung zum unmittelbaren Nutzen f\"ur die Wirtschaft und zum Vorteil der Gesellschaft
+    \item mehrere Forschungsthemen, u.a. 
+      \begin{itemize}
+      \item Energie und Wohnen
+      \item Verkehr und Mobilit\"at
+      \item Gesundheit und Umwelt
+      \end{itemize}
+    \end{itemize}
+
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{itemize}
+        \item Gleichgewicht zwischen anwendungsorientierter Grundlagenforschung und innovativer Entwicklung
+        \item Finanzierung \"uber Auftragsforschung (70\%) und \"offentliche Gelder (30\%) f\"ur Vorlaufforschung
+        \end{itemize}
+      \end{column}
+      \begin{column}{0.45\textwidth}
+        \includegraphics[width=1\textwidth]{pics/finanzenFraunhofer}
+      \end{column}
+    \end{columns}
+  \end{frame}
+}
+
+%------------------------------------------------------------------------
+\begin{frame}[t] \frametitle{Struktur der Fraunhofer Gesellschaft}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+      \item etwa 22.000 Mitarbeiter, \"uberwiegend Naturwissenschaftler und Ingenieure
+      \item dezentrale Organisation durch 
+        \begin{itemize}
+        \item 66 Fraunhofer-Institute
+        \item 10-20 kleinere Forschungseinrichtungen
+        \item weitere Niederlassungen au\ss erhalb Deutschlands
+        \end{itemize}
+      \item 40 Standorte, darunter auch Bonn, Euskirchen und Sankt Augustin
+      \item die Institute sind in ``Verb\"unden'' zusammengefasst
+      \item Zentrale in M\"unchen
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \includegraphics[width=1.0\textwidth]{pics/mapFraunhofer}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------
+\begin{frame}[t,label=mab_refs] \frametitle{Literatur zum Kurs}
+  \begin{itemize}
+    \item \textsf{\LaTeX{}}:
+      \begin{itemize}
+        \item\label{it:SchlagerThibud} 
+              Petra Schlager und Manfred Thibud.
+              Wissenschaftlich mit \LaTeX arbeiten.
+              Pearson Studium, M"unchen 2005.
+        \item\label{it:DalheimerGuenther}
+              Matthias Kalle Dalheimer und Karsten G"unther.
+              \LaTeX kurz \& gut.
+              3.~Auflage, O'Reilly, K"oln 2008.
+      \end{itemize}
+    \item \texttt{beamer}\texttt{-Klasse}:
+      \begin{itemize}
+        \item\label{TantauWrightMiletic}
+              Till Tantau, Joseph Wright, Vedran Mileti{\'c}.
+              The \texttt{beamer} class -- User guide for version 3.10.
+              \href{http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{\url{www.ctan.org/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}, 2010.
+        \item\label{it:Voss}
+              Herbert Vo"s.
+              Pr"asentationen mit \LaTeX.
+              Lehmanns Media (dante), Berlin 2009.
+      \end{itemize}
+    \item \textsf{Wissenschaftliches Arbeiten}:
+      \begin{itemize}
+        \item\label{it:Lagendijk}
+              Ad Lagendijk.
+              Survival guide for scientists -- writing -- presentation -- email.
+              Amsterdam University Press, Amsterdam 2008.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------
+\begin{frame} \frametitle{Bildschirm oder nicht -- da"s ist hier die Frage}
+  \mode<presentation>{
+    \hskip 15.5mm \includegraphics[width=0.7\textwidth]{pics/question}
+  }
+  \mode<article>{
+    Je nach Formeldichte, Notwendigkeit von Bildern, 
+    und pers"onlichem Geschmack sollte die Wahl eines 
+    Pr"asentationsmediums den Erwartungen des Publikums
+    angepa"st werden. In Frage kommt etwa auch ein
+    \begin{itemize}
+      \item Tafelvortrag,
+      \item Vortrag mit Flipchart,
+      \item freier Vortrag ohne weitere Untermauerung.
+    \end{itemize}
+  }
+\end{frame}
+

@@ -1,0 +1,222 @@
+* Aufbau
+** Titlepage
+** Überblick zum Inhalt der Präsentation
+** Beschreibung der Fraunhofer-Gesellschaft (2 Folien)
+*** Mission und Leitlinien
+*** Einordnung in der deutschen/europäischen Forschungslandschaft
+*** Zahlen und Fakten
+*** Aufbau und Gliederung der Institute (Verbünde, Allianzen)
+*** Forschungsthemen
+*** Finanzierung
+** Beschreibung der Fraunhofer ESK (2 Folien)
+*** Aufgabenbereich
+*** Aufteilung in die drei Geschäftsfelder und in die Kernkompetenzen, Einordnung
+*** Zahlen und Fakten: Anzahl der Mitarbeiter, Anzahl der Studierenden
+*** Aufgaben- (Leistungs-)bereiche von Geschäftsfeld Automotive, Größe etwa 2/3 von ESK)
+*** Aufgabenfelder im Leistungsbereich Automotive Connectivity (evtl. eine Grafik zur Übersicht von ESK) 
+** Einordnung meiner Tätigkeit (3 Folien)
+*** Grunddaten meines Praktikums (Arbeitszeiten etc.), Betreuungsverhältnis
+*** Aufgabenbereich: Erklärung von Routing und Mapmatching, OSM
+*** Motivation und Einordnung meiner Tätigkeiten - Anwendung in Projekten, Erklärung von Car2X
+** Beschreibung meiner Tätigkeiten (4 Folien)
+*** Einarbeitung in BOOST, OpenStreetMap, Implementierung des Kartenmaterials
+*** Ablauf der Tätigkeiten (Kernzeiten, Grad der Selbstständigkeit etc?)
+*** Routing: Beispiele für Routing-Algorithmen, Beispiele und Vergleich der Ergebnisse
+*** MapMatching: Beispiele für Map-Matching-Algorithmen, Ergebnisse
+** Fachlicher Bezug zum Studium (2 Folien)
+*** Benötigtes Vorwissen: Graphentheorie, Routing-Algorithmen, Elementare Geometrie, später auch Wahrscheinlichkeitstheorie (Filter), Differentialgeometrie
+*** Erworbene Fähigkeiten: C++ Programmierung, BOOST, Openstreetmap, Anwendung und erweiterung des Dijkstra-Algorithmus auf RealWorld-Anwendungen (Einbahnstraßen, Abbiegeverbote), besserer Überblick zu Routingalgorithmen
+*** Ausblick: Kompliziertere Verfahren vor allem zum MapMatching aber auch im Routing benötigen "höhere Mathematik" (Beispiele).
+** Fazit (2 Folien)
+*** Pros: Gute Arbeitsatmosphäre, sehr selbstständiges Arbeiten, sehr interessantes Themengebiet, Fortschritt schnell erkennbar - Bilder, viele eigene kleine Projekte, Arbeitsalltag
+*** Cons: Viele Studenten - dadurch weniger Kontakt zu den Mitarbeitern, kaum etwas über andere Bereiche erfahren, zu wenig Zeit und wirklich interessante Algorithmen anzugehen
+*** Persönliches Fazit: sehr viel Spaß gemacht, teilweise Neuausrichtung meines Studiums - Programmieren ist wichtig! Kann mir vorstellen in dem Bereich zu arbeiten
+*** Fraunhofer als späterer Arbeitgeber? Nur eine gewisse Zeit lang (evtl. Promotion), flache Hierarchie?
+** Quellen (1 Folie)
+- http://www.fraunhofer.de
+- http://www.esk.fraunhofer.de
+- http://www.adaptive-city-mobility.de
+- http://www.mobincity.eu
+- http://www.openstreetmap.org/
+** Danke und Fragen (1 Folie)
+
+* TODO Eigene Fragen 
+- Kontaktdaten von Praktikumsstelle und Betruer im Vortrag/Bericht?
+- Irgendetwas über meinen Betreuer berichten?
+- Bewerbungsverlauf?
+
+* Überblick zur Fraunhofer Gesellschaft 
+** TODO Overlays einfügen
+
+** Folie 1 (Die Fraunhofer Gesellschaft - Forschungsprofil)
+
++ *größte Forschungseinrichtung für anwendungsorientierte Forschung in Europa* /wichtig: anwendungsorientiert: "zum unmittelbaren Nutzen für die Wirtschaft und zum Vorteil für die Gesellschaft", also KEINE Grundlagenforschung (Max-Planck-Institute)/
++ *ergebnisorientierte Forschung: dynamisches Gleichgewicht zwischen anwendungsorientierter Grundlagenforschung und innovativer Entwicklung*
++ *Finanzierung über Auftragsforschung (70%) und öffentliche Hand (30%)* /Anmerkung: entspricht dem Prinzip der Ergebnisorientierten Forschung/ =evtl. Diagramm?=
+
+
+** Folie 2 (Die Fraunhofer Gesellschaft - Struktur)
+
++ *mehrere Forschungsthemen, u.a. Energie und Wohnen, Verkehr und Mobilität, Gesundheit und Umwelt*
++ *etwa 22.000 Mitarbeiter, überwiegend Naturwissenschaftler und Ingenieure* /besser: mit natur- und ingenieurwissenschaftlichen Hintergrund/
++ *untergliedert in 66 Fraunhofer-Institute und selbständige Einrichtungen mit Standorten in ganz Deutschland* /Anmerkung: also dezentral organisiert, die einzelnen Forschungseinrichtungen sind wiederum in Verbünden und Allianzen gebündelt/ =Karte=
+
+
+* Das Fraunhofer ESK
+** TODO Overlays einfügen
+
+** Folie 1 (Aufgabenfelder des Fraunhofer ESK)
+
++ *Fraunhofer-Institut für eigebettete System und Kommunikationstechnik ESK* /Anmerkung: erst am 1. Juli 2013 in ein Fraunhofer-Institut überführt worden/
++ *kleineres Institut: ca. 80 Mitarbeiter, viele Studenten etwa 15 bis 20*
++ *Forschung an Verfahren und Methoden der Informations- und Kommunikationstechnik (IKT)* /Bereich hauptsächlich für Informatiker oder Systemtechniker/
++ *Anwendungen u.a. in:*
+  - *Fahrzeugtechnik und Verkehr* /Anmerkung: in diesem Bereich habe ich gearbeitet, komme später noch auf Beispiele zurück/
+  - *Telekommunikation*
+  - *Energieversorgung*
+  - *Sicherheitstechnik*
++ *Gliederung in drei Geschäftsfelder*
+  - *Automotive: Fahrzeugkommunikation* /Anmerkung: Größter Bereich im ESK, umfasst etwa die Hälfte, in diesem Bereich habe ich gearbeitet, komme noch darauf zurück/
+  - *Industrial Communication: Automatisierung, Kommuninkationssysteme für Energieversorgung*
+  - *Telecommunication: Leitungsgebundene Übertragungstechniken, Konnektivität von Kommunikationssystemen*
+
+** Folie 2 (Das Geschäftsfeld Automotive)
+
++ *Größtes Geschäftsfeld des ESK (etwa die Hälfte der Mitarbeiter)*
++ *Lösungen um wachsende Anforderungen an Fahrzeuge (Sicherheit, Flexibilität) zu erfüllen:*
+  - *stärkere Vernetzung von Fahrzeugen*
+  - *Kommunikationssysteme für neuartige Fahrzeugkonzepte (bspw. Elektromobilität)*
++ *Automotive Connectivity* =Organigramm zur Struktur vom ESK=
+
+
+
+* Überblick zum Praktikum
+
+** Folie 1 (Praktikumsdaten und Bewerbung)
+
++ /Erzählen, wie es dazu kam, dass ich ein Praktikum gemacht habe./
++ *Praktikumsbeschreibung: Implementierung von kartebezogenen Algorithmen*
++ *Zeitraum von ungefähr 5 Monaten* /Anmerkung: Urlaubssemester, weil ich sowieso die Uni wechseln wollte/
++ *39 Stunden/Woche* 
++ /Erzählen wie Bewerbung ablief./
+
+
+** Folie 2 (evtl auch 3) (Aufgabenbeschreibung)
+
++ *Implementierung von kartenbezogenen Algorithmen im Rahmen eines Softwareframeworks für C2X-Kommunikation*
+  - *Routing-Algorithmen: Bestimmung des kürzesten (besten) Weges zwischen zwei Positionen* 
+  - *Mapmatching-Algorithmen: Abgleich von Kartenmaterial und Standortdaten (GPS-Daten)* /Näher beschreiben: Ungenauigkeit von GPS-Signalen, Richtungen, Probleme an Kreuzungen/
++ *Implementierung und Test ausgewählter Algorithmen*
++ *Mögliche Anwendungsfälle: mobincity (EU-Projekt), Adaptive City mobility (national)* /Näher beschreiben: mobincity: Aufbau einer Infrastruktur für Elektroautos in Großstädten, ACM Elektrobetriebene Rikschas (TukTuks)/ =Bild einfügen=
++ /Erklären, warum keine bereits vorhandenen Algorithmen verwendet werden konnten: Rechtliche Gründe, Anpassung an bereits bestehendes Software Framework/
+
+
+* Praktikumstätigkeit
+
+** Folie 1 (Einarbeitung und Kartenmaterial)
+
++ *Kartenmaterial vom OpenStreetMap Projekt (lizenzkostenfreie Daten)*
++ *Einarbeitung in die Datenstruktur des Kartenmaterials und Mithilfe bei der Implementierung von zusätzlichen Funktionalitäten (Geschwindigkeitsbegrenzungen, Abbiegeverbote)* /damit habe ich die ersten Wochen des Praktikums verbracht/
++ *Übersicht über mögliche Routing- und Mapmatching-Algorithmen* /sehr selbständiges Arbeiten, praktisch freie Hand gehabt, musste mir selbst Paper zusammensuchen/
++ *Arbeitsprozess: Selbstständige Recherche (Internet, Paper) - Entwurf eines Software-Modells - Anpassung und Implementierung - Tests* /näher beschreiben: Auswahl geeigneter Datenstrukturen -> Einarbeitung in die BOOST-Library, Dokumentation, Abstimmung mit Betreuer/
+
+
+** Folie 2 (und 3) (Routing)
+
++ *Grundlage: angepasster Dijkstra-Algorithmus*
+  - *Abbiegeverbote (Routing über Kanten anstatt Knoten)*
+  - *Einbahnstraßen*
++ *Verbesserung des Dijkstra-Algorithmus mit Hilfe von Heuristiken (Schätzfunktionen): verringert die Anzahl der besuchten Knoten und damit die Laufzeit des Algorithmus*
+  - *euklidische Heuristik: A*-Algorithmus* /Näher erläutern/
+  - *Heuristik mit Hilfe von sog. Landmarken: ALT-Algorithmus* /Näher erläutern/
++ *Verbesserung der Laufzeit durch bidirektionale Suche*
++ =Vergleich von Ergebnissen hinzufügen=
++ /erwähnen, dass es noch viele deutlich kompliziertere und schnellere Algorithmen gibt/
+
+
+** Folie 4 (und 5) (Mapmatching)
+
++ /Erwähnen, dass zunächst GPS-Tracks gefunden werden mussten -> aus OSM-Projekt, herausfiltern der für uns relevanten Tracks/
++ *einfache geometrische Mapmatching-Algorithmen:* /im Wesentlichen Distanz-Berechnung/
+  - *Matching auf nächstgelegenen Knoten*
+  - *Matching auf nächstgelegene Kante, durch "orthogonale" Projektion*
++ *topologischer Mapmatching-Algorithmus: berechnet wahrscheinlichsten Mapmatching-Punkt mit zusätzlichen Kriterien:* /bezieht "Geschichte" der GPS-Signale mit in die Berechnung ein/
+  - *Zusammenhang von Straßenabschnitten, Abbiegeverbote*
+  - *Kurs-Informationen*
+  - *Geschwindigkeitsdaten*
++ *MHT (multiple-hypothesis-technique) MapMatching:*
+  - *ähnlich zum topologischen Mapmatcher*
+  - *betrachtet gleichzeitig mehrere Kandidaten-Routen*
++ =Vergleich von Ergebnissen hinzufügen=
++ /erwähnen, dass es noch viele weitere Algorithmen gibt, die auf Fuzzy-Logik, oder Kalman-Filtering (Stochastik) beruhen/
+
+
+
+* Fachlicher Bezug zum Studium
+
+** Mathematik im Praktikum (Folie 1)
+
++ *mathematisches Fachwissen ist von Vorteil, aber nicht zwingend notwendig*
+  - *Grundkenntnisse in der Graphentheorie (Dijkstra etc.)*
+  - *Kenntnisse in Geometrie für den Umgang mit dem WGS84 Koordinatensystem*
+  - *Für kompliziertere Mapmatching-Algorithmen: Stochastik (Kalman Filter), Logik (Fuzzy Logic)*
++ *Wichtiger ist "mathematische" Denkweise* /Anmerkung: strukturiertes, logisches Denken/
+  - *organisierte Arbeitsweise*
+  - *unüberschaubare Problemstellungen auf Kernprobleme reduzieren (zum Beispiel: Probleme in Teilprobleme unterteilen)* /Anmerkung: Abstraktionfähigkeit, zum Beispiel geometrischer Mapmatcher/
+  - *Anwenden von abstrakten Theorien auf Probleme der realen Welt (zum Beispiel: Berücksichtigung von Abbiegeverboten im Dijkstra-Algorithms)* /Aufgabenlösen im Studium/
+
+
+** Mathematik im Praktikum (Folie 2)
+
++ *Schnelle und selbständige Einarbeitung in neue Themenbereiche* /Im Mathematikstudium durch Seminare/
+  - *Verständnis und Bewertung von neuen Algorithmen*
+  - *Zurechtfinden in neuen Datenstrukturen* /Anmerkung: großes Software repository, Software Bibliotheken/
++ *Hohe Frustrationstoleranz*
++ *Gute Fähigkeiten am Computer* /Anmerkung: ist nicht wirklich Mathematik-Typisch, aber Programmieraufgaben sind gut.../
+
+
+
+* Persönliches Fazit und Ausblick
+
+** Persönliches Fazit (Folie 1)
+
++ *Insgesamt sehr positive Erfahrung* /gute Orientierung für das restliche Studium/
++ *Pro*
+  - *angenehme Arbeitsatmosphäre* /ist sehr wichtig/
+  - *gute Betreuung, viel Kontakt mit anderen Studenten*
+  - *weitesgehend selbstständiges Arbeiten, viele "eigene Projekte"*
+  - *interessantes und abwechslungsreiches Themengebiet*
+  - *Motivation durch schnell erkennbaren Fortschritt* /siehe Bilder der Resultat -> schön etwas in der Hand zu haben, liegt auch an der Natur der Sache: angewandte Forschung/
++ *Contra*
+  - *wenig Kontakt mit anderen Mitarbeitern und anderen Bereichen des Institus*
+  - *zu wenig Zeit, um interessantere Algorithmen zu implementieren*
+
+
+** Ausblick (Folie 2)
+
++ *große Hilfe bei der Orientierung für einen späteren Beruf*
+  - *mathematisches Fachwissen ist nicht das wichtigste*
+  - *fördert eigenständiges Arbeiten*
+  - *guter Umgang mit Computern ist ein Vorteil* /zumindest in diesem Bereich, erspart viel Zeit/
++ *ermöglicht bessere Ausrichtung des Studiums* /in meinem Fall -> entschieden Numerik zu machen, SHK Stelle am Fraunhofer SCAI/
++ *spätere Anstellung bei der Fraunhofer Gesellschaft vorstellbar*
+  - *anderer Bereich (Physik)*
+  - *evtl. während einer möglichen Promotion*
+  - *auf längere Zeit fehlt vielleicht die Herausforderung (flache Hierarchie)* /hier muss ich noch etwas dazu sagen/
+
+** Fazit (2 Folien)
+*** Pros: Gute Arbeitsatmosphäre, sehr selbstständiges Arbeiten, sehr interessantes Themengebiet, Fortschritt schnell erkennbar - Bilder, viele eigene kleine Projekte, Arbeitsalltag
+*** Cons: Viele Studenten - dadurch weniger Kontakt zu den Mitarbeitern, kaum etwas über andere Bereiche erfahren, zu wenig Zeit und wirklich interessante Algorithmen anzugehen
+*** Persönliches Fazit: sehr viel Spaß gemacht, teilweise Neuausrichtung meines Studiums - Programmieren ist wichtig! Kann mir vorstellen in dem Bereich zu arbeiten
+*** Fraunhofer als späterer Arbeitgeber? Nur eine gewisse Zeit lang (evtl. Promotion), flache Hierarchie?
+** Quellen (1 Folie)
+- www.fraunhofer.de
+- www.esk.fraunhofer.de
+- www.openstreetmap.org
+** Danke und Fragen (1 Folie)
+
+* Verbesserungen
+Seitenzahlen 
+C++ Programmierung
+Bilder Overlays
+Dank, Fragen, Adressen, Quellen
