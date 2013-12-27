@@ -1,9 +1,0 @@
-* Aufbau des Praktikumsberichts
-
-- 5 bis 10 Seiten
-- Beschreibung der Arbeitsumgebung (Institut, Abteilung)
-- Tätigkeit
-- fachlicher Bezug zum Studium
-- persönliches Fazit
-
-
