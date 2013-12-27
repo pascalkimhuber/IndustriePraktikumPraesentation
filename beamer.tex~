@@ -1,0 +1,73 @@
+\documentclass[10pt]{beamer}
+\mode<presentation>
+{
+  \usetheme{Goettingen}
+  \usecolortheme{sidebartab}
+  \usecolortheme{crane}
+  \useinnertheme[shadow]{rounded}
+  %\setbeamercovered{transparent}
+  \usefonttheme[stillsansserifsmall,stillsansseriflarge]{serif}
+}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+%\usepackage{listings}
+\usepackage{url}
+
+\hypersetup{pdftex=true,colorlinks=true,breaklinks=true,
+            linkcolor=craneblue,menucolor=craneblue,pagecolor=craneblue,
+            urlcolor=craneblue}
+
+
+
+\title[\texorpdfstring{\LaTeX{} beamer}{LaTeX beamer}]{\texorpdfstring{\LaTeX{} \texttt{beamer} Grundlagen}{LaTeX beamer Grundlagen}}
+\author{Martin Bock \\ \url{mab@uni-bonn.de}}
+%\email{bock@itp.uni-leipzig.de}
+%\date{10.~und 16.~Oktober 2010}
+\date{\today}
+\subject{LaTeX beamer class}
+\keywords{LaTeX, beamer, typesetting, slides, trick}
+
+
+
+\newcommand{\mabbackslash}{\char`\\}
+\newcommand{\mabocurly}{\char`\{}
+\newcommand{\mabccurly}{\char`\}}
+
+
+
+%\AtBeginSection[] % XXX remove me
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Inhalt}
+%    \tableofcontents[currentsection] % FIXME
+%  \end{frame}
+%}
+
+
+
+\begin{document}
+%--------------------------------------------------------------
+\begin{frame}[label=mab_title]
+  \titlepage
+\end{frame}
+
+
+%--------------------------------------------------------------
+%\begin{frame} \frametitle{Inhalt}
+%  \tableofcontents % XXX remove me
+%\end{frame}
+
+
+%--------------------------------------------------------------
+%\lstset{language=[LaTeX]TeX}
+
+\input{intro/intro}
+%\input{basics/basics}
+%\input{specials/specials}
+%%\input{summary/summary}
+%\input{presentation/presentation}
+%%\input{theme/theme}
+
+
+\end{document}
+
