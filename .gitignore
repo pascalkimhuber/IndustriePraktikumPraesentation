@@ -31,3 +31,5 @@
 *.vrb
 *.xdy
 *.tdo
+/Bericht/#structure.org#
+/Bericht/.#structure.org
