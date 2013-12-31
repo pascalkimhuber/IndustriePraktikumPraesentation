@@ -52,6 +52,7 @@
 - Was war meine Aufgabe aus der Sicht der Institution?
 - Was sollte/wollte ich im Verlauf des Praktikums erreichen?
 
+
 *** Tätigkeit und Arbeitsergebnisse (ausführlichster Abschnitt?)
 - Was habe ich in der Zeit des Praktikums getan?
 - Welche Schwierigkeiten gab es, welche starken Phasen?
@@ -61,6 +62,7 @@
 
 ** TODO Reflexion - fachlicher Bezug zum Studium
 
+- Was sollte/wollte ich im Verlauf des Praktikums erreichen?
 - Mathematischer Bezug des Instituts, der Praktikumsstelle
 - Welches Wissen aus dem Studium wurde im Praktikum benötigt?
 - Wo gab es Defizite?
