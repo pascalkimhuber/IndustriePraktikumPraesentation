@@ -60,7 +60,7 @@
 - Welche Kompetenzen konnte ich einbringen?
 
 
-** TODO Reflexion - fachlicher Bezug zum Studium
+** TODO Reflexion - fachlicher Bezug zum Studium (1 Seite)
 
 - Was sollte/wollte ich im Verlauf des Praktikums erreichen?
 - Mathematischer Bezug des Instituts, der Praktikumsstelle
@@ -70,7 +70,7 @@
 - Was lerne ich im Studium das ich im Praktikum nicht vermittelt bekomme?
 
 
-** TODO Fazit und Bewertung
+** TODO Fazit und Bewertung (1 Seite)
 
 - Wie ist das Praktikum insgesamt zu bewerten?
 - Zusammenarbeit mit den Mitarbeitern?

@@ -1,14 +1,35 @@
 (TeX-add-style-hook "_region_"
  (lambda ()
+    (LaTeX-add-labels
+     "sec:einleitung"
+     "sec:beschr-der-prakt"
+     "sec:die-fraunh-gesellsch"
+     "sec:das-fraunh-inst"
+     "sec:das-bewerb"
+     "sec:rahm-des-prakt"
+     "sec:aufg-und-tatigk"
+     "sec:uberbl-und-einord"
+     "sec:ziels-des-prakt"
+     "sec:tatigk-und-arbe"
+     "sec:einarbeitungsphase"
+     "sec:routing-algorithmen"
+     "sec:das-verfahren"
+     "sec:dijkstra-algorithmus"
+     "sec:bidirektionale-suche"
+     "sec:eins-von-heur"
+     "sec:stichpunkte-2"
+     "sec:stichpunkte-1"
+     "sec:quellen")
     (TeX-run-style-hooks
+     "todonotes"
+     ""
      "inputenc"
      "utf8"
      "babel"
      "ngerman"
      "latex2e"
-     "scrartcl11"
+     "scrartcl10"
      "scrartcl"
-     "twoside"
-     "11pt"
-     "a4paper")))
+     "a4paper"
+     "twoside")))
 

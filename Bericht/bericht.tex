@@ -1,4 +1,4 @@
-\documentclass[a4paper]{scrartcl}
+\documentclass[twoside, a4paper]{scrartcl}
 
 \usepackage[ngerman]{babel} % German output
 \usepackage[utf8]{inputenc} % Input encoding
@@ -99,21 +99,101 @@ Das ezCar2X Projekt besteht dabei aus einer Sammlung von C++-Bibliotheken, die e
 \label{sec:ziels-des-prakt}
 
 
-Ziel meines Praktikums war die Erweiterung des ezCar2X Software-Frameworks um kartenbezogene Algorithmen zur Ermöglichung von positions- und navigationsbezogenen Anwendungen. Dabei sollte ich einige einfache Vertreter dieser Algorithmen implementieren, die als Basis für komplexere Verfahren dienen sollen. \todo{Komische Formulierung? Grammatik?} Unter kartenbezogenen Algorithmen versteht man dabei im Wesentlichen zwei Arten von Algorithmen. Auf der einen Seite werden Mapmatching-Verfahren benötigt, die die Fahrzeugposition auf einer gegebenen digitalen Karte abbilden. Dazu werden Positionsinformation (GPS-Position) mit vorhandenem Kartenmaterial in Beziehung gebracht. Auf der anderen Seite sind Routing-Algorithmen notwending, um die nach einem vorgegebenen Kriterium beste Route zum Ziel zu errechnen. \\
-Im Zuge meines Praktikums sollte ich mich zunächst einen Überblick über mögliche Mapmatching- und Routing-Algorithmen machen und anschließend eine Auswahl solcher Algorithmen implementieren und testen. Parallel wurde von meinem Betreuer ein Verwaltungssystem für digitale Kartendaten implemetiert, auf das sich die von mir geschriebenen Algorithmen stützen sollten und bei dem ich ihn gegebenenfalls unterstützen sollte. Das Kartenmaterial für dieses Verwaltungssystem stammt vom OpenStreetMap-Projekt, welches den Vorteil hat, dass die Daten sehr vielfältig und präzise aber gleichzeitig lizenzkostenfrei sind. \todo{Grammatik falsch?} \\
+Ziel meines Praktikums war die Erweiterung des ezCar2X Software-Frameworks um kartenbezogene Algorithmen zur Ermöglichung von positions- und navigationsbezogenen Anwendungen. Dabei sollte ich einige einfache Vertreter dieser Algorithmen implementieren, die als Basis für komplexere Verfahren dienen sollen. \todo{Komische Formulierung? Grammatik?} Unter kartenbezogenen Algorithmen versteht man dabei im Wesentlichen zwei Arten von Algorithmen \todo{Wiederholung Algorithmen}. Auf der einen Seite werden Mapmatching-Verfahren benötigt, die die Fahrzeugposition auf einer gegebenen digitalen Karte abbilden. Dazu werden Positionsinformation (GPS-Position) mit vorhandenem Kartenmaterial in Beziehung gebracht. Auf der anderen Seite sind Routing-Algorithmen notwending, um die nach einem vorgegebenen Kriterium beste Route zum Ziel zu errechnen. \\
+Im Zuge meines Praktikums sollte ich mich zunächst einen Überblick über mögliche Mapmatching- und Routing-Algorithmen machen und anschließend eine Auswahl solcher Algorithmen implementieren und testen. Parallel wurde von meinem Betreuer ein Verwaltungssystem für digitale Kartendaten implemetiert, auf das sich die von mir geschriebenen Algorithmen stützen sollten und bei dem ich ihn gegebenenfalls unterstützen sollte. Das Kartenmaterial für dieses Verwaltungssystem stammt vom OpenStreetMap-Projekt, welches den Vorteil hat, dass die Daten sehr vielfältig und präzise und gleichzeitig lizenzkostenfrei sind. \todo{Grammatik falsch?} \\
 Da meine Betreuer und ich die einzigen Mitarbeiter waren, die sich mit der Integration von kartenbezogenen Anwendungen befassten, war es fast vollständig mir überlassen, welche Schwerpunkte ich setzen und welche Funktionalitäten ich implementieren sollte. \todo{Ist dieser letzte Satz vielleicht unnötig?}
 
-\begin{itemize}
-\item Erklärung von kartenbezogenen Algorithmen
-\item Bestehendes Interface
-\item Wer hat außerdem am Projekt mitgearbeitet, wie war die Zusammenarbeit
-\item Ziele aus der Sicht der Institution
-\item Persönliche Zielsetzung - vielleicht eher im dritten Teil? 
-\end{itemize}
+
+% \begin{itemize}
+% \item Erklärung von kartenbezogenen Algorithmen
+% \item Bestehendes Interface
+% \item Wer hat außerdem am Projekt mitgearbeitet, wie war die Zusammenarbeit
+% \item Ziele aus der Sicht der Institution
+% \item Persönliche Zielsetzung - vielleicht eher im dritten Teil? 
+% \end{itemize}
 
 
 \subsection{Tätigkeit und Arbeitsergebnisse}
 \label{sec:tatigk-und-arbe}
+
+\subsubsection{Einarbeitungsphase}
+\label{sec:einarbeitungsphase}
+
+\todo{Ist dieser Abschnitt notwendig?} Bevor ich mit der eigentlichen Arbeit, also der Auswahl und Implementierung der Algorithmen anfangen konnte, musste ich zunächst meinen Arbeitsplatz einrichten und mir einen Überblick über die für mich relevanten Teile des ezCar2X-Frameworks machen. Nachdem ich mich mit dem bestehenden Source-Code vertraut gemacht hatte, begann ich eine Übersicht von möglichen Routing- und Mapmatching-Algorithmen zu erstellen, die mir als Grundlage für meine Arbeit dienen sollte. Dabei bezog ich meine Informationen hauptsächlich aus wissenschaftlichen Papern\todo{"Wissenschaftliche Paper" klingt komisch}, die ich im Internet fand und aus Gesprächen mit meinem Betreuer, der bereits in seiner Studienzeit viel mit Mapmatching-Verfahren gearbeitet hatte\todo{Grammatik falsch? Satz unnötig?}. 
+% \paragraph{Stichpunkte}
+% \label{sec:stichpunkte}
+% \begin{itemize}
+% \item Computer einrichten
+% \item Mit bestehendem Repository vertraut machen
+% \item Überblick zu Mapmatching- und Routing Algorithmen machen
+% \end{itemize}
+
+
+\subsubsection{Routing-Algorithmen}
+\label{sec:routing-algorithmen}
+
+Um mir den Einstieg in die Programmierarbeit zu erleichtern, entschied ich mich mit der Implementierung der Routing-Algorithmen zu beginnen, da ich das grundlegende Verfahren, nämlich \todo{"Nämlich" hört sich doof an} den Dijkstra-Algorithmus schon aus meinem Studium kannte. Im Folgenden möchte ich zunächst die Grundidee des Routing-Verfahrens vorstellen und anschließend kurz auf die von mir implementierten Algorithmen eingehen. 
+
+\paragraph{Das Verfahren}
+\label{sec:das-verfahren}
+
+Die Aufgabe eines Routing-Algorithmus ist die Bestimmung einer 'besten' Route zwischen zwei gegebenen Positionen. Die Güte einer Route wird hierbei durch ein zuvor festgelegtes Kriterium definiert, meistens handelt es sich dabei entweder um die Reisezeit oder die Gesamtlänge der Route. \\
+Mathematisch gesehen wird das Straßennetz als Graph aufgefasst, in dem die Knoten die Kreuzungen und die Kanten die dazwischen liegenden Straßenabschnitte repräsentieren. Jeder Kante wird anschließend ein (ein nicht-negatives) Gewicht zugeordnet, das sich aus dem zuvor gewählten Kriterium ableitet, beispielsweise die Länge des Straßenabschnitts in Metern. Zur Bestimmung des besten Weges zwischen zwei Positionen wird nun ein von der Startposition ausgehender Dijkstra-Algorithmus verwendet.\\
+Da im Prinzip alle Routing-Algorithmen auf diesem einfachen Verfahren aufbauen, möchte ich kurz die wesentlichen Schritte des Dijkstra-Algorithmus in Erinnerung rufen. Die Grundidee des Algorithmus ist es, im jeden Schritt immer der Kante zu folgen, die zu diesem Zeitpunkt das geringste Gesamtgewicht zum Startknoten besitzt. Im einzelnen werden folgende Schritte ausgeführt:
+\todo{Vielleicht richtiger Pseudo-Code oder sogar einfach weglassen? Relaxation benennen?}
+\begin{enumerate}\sffamily\small
+\item Weise dem Startknoten ein Gesamtgewicht von $0$ und allen anderen Knoten ein Gesamtgewicht von $\infty$ zu.
+\item Solange der Zielknoten nicht besucht wurde, wähle unter allen unbesuchten Knoten denjenigen mit dem geringsten Gesamtgewicht aus. 
+  \begin{enumerate}
+  \item[a.] Markiere den ausgewählten Knoten als 'besucht'.
+  \item[b.] Berechne für alle unbesuchten Nachbarknoten die Summe aus dem aktuellen Gesamtgewicht und den Kosten der verbindenden Kante.
+  \item[c.] Falls das Gesamtgewicht eines unbesuchten Nachbarknoten größer als die berechnete Summe ist, ersetze es durch die Summe und aktualisiere den Vorgänger.
+  \end{enumerate}
+\end{enumerate}
+
+\paragraph{Dijkstra-Algorithmus}
+\label{sec:dijkstra-algorithmus}
+
+Bei der Implementierung des Dijkstra-Algorithmus musste ich den obigen Algorithmus an ein paar Besonderheiten beim Routing in Straßennetzen anpassen. Das größte Problem stellten dabei Abbiegeverbote dar. Da in diesem Fall Paare von Kanten betrachtet werden müssen, änderte ich den Algorithmus dahingehend, dass dieser nicht nur Knoten sondern Knoten-Kanten-Paare betrachtet. Der resultierende Algorithmus lieferte schließlich korrekte Ergebnisse. 
+\\
+\todo{Dieser Satz gefällt mir nicht!} Das Hauptproblem der Dijkstra-Suche besteht darin, dass der Algorithmus einen großen Suchraum (Menge der besuchten Knoten) betrachten muss, was zu hohen Laufzeiten führt. Die eigentliche Schwierigkeit beim Routing besteht also darin, den Dijkstra-Algorithmus mit Hilfe von Zusatzinformationen so zu verbessern, dass einerseits die Korrektheit des Algorithmus gewahrt bleibt und andererseits die Laufzeit verringert wird. 
+
+\paragraph{Bidirektionale Suche}
+\label{sec:bidirektionale-suche}
+
+Als ersten Ansatz zur Reduktion der Laufzeit wählte ich das Verfahren der bidirektionalen Suche. Dabei wird zusätzlich zu der obigen Dijkstra-Suche simultan eine weitere von der Zielposition ausgehende Suche durchgeführt. Der Algorithmus terminiert sobald ein Knoten sowohl von der Vorwärts- als auch von der Rückwärtssuche besucht wurde. Dieses Verfahren halbiert den Suchraum und verringert entsprechend die Laufzeit. Bei der Implementierung stellte sich vor allem die korrekte Formulierung des Abbruchkriteriums als schwierig heraus, da ich aufgrund der Abbiegeverbote wie im einfachen Dijkstra-Algorithmus Knoten-Kanten-Paare betrachten musste. 
+
+\paragraph{ A*-Algorithmus}
+\label{sec:eins-von-heur}
+
+Ein effektiverer Weg die Laufzeit des Dijkstra-Algorithmus zu verringern ist der Einsatz von Schätzfunktionen (Heuristiken), die zusätzliche Informationen (zum Beispiel geographische Positionen) \todo{Bemerkung in Klammer unnötig?} verwenden, um den Suchraum zu verkleinern. Der resultierende Algorithmus wird A*-Algorithmus genannt.\\
+Intern wählt der Dijkstra-Algorithmus im jeden Schritt denjenigen unbesuchten Knoten $v$ mit den geringsten Gesamtkosten $c(v)$ aus (siehe 2. im Algorithmus von \ref{sec:das-verfahren}). Der A*-Algorithmus dagegen berücksichtigt zusätzlich dazu eine Schätzfunktion $h(v)$, sodass derjenige Knoten besucht wird, für den die Summe 
+\begin{equation}
+  \label{eq:1}
+  c(v) + h(v)   
+\end{equation}
+am kleinsten ist. Die Schätzfunktion $h(v)$ soll die verbleibenden Kosten von $v$ bis zur Zielposition abschätzen und damit diejenigen Knoten $v$ bevorzugen, die im Sinne der gewählten Heuristik am wahrscheinlichsten auf einer besten Route liegen. \\
+Damit der A*-Algorithmus ein korrektes Ergebnis liefert, muss die Heuristik $h(v)$ zwei Bedingungen erfüllen. Auf der einen Seite darf sie die benötigten Gesamtkosten um von $v$ zum Zielknoten $b$ zu gelangen nicht überschätzen, d.h. es muss gelten $h(v) \leq dist_c(v,b)$ und auf der anderen Seite muss eine Art Dreiecksungleichung erfüllt sein. \\
+Für mein Praktikum wählte ich als Heuristik zum einen die euklidische Distanz zwischen $v$ und $b$ und zum anderen eine Schätzfunktion die auf vorberechneten Kosten von zuvor zufällig gewählten Knoten, sogenannten Landmarken beruht (ALT-Algorithmus). \todo{Muss ich hier mehr ins Detail gehen?} 
+Bevor ich diese Heuristiken implementieren konnte, musste ich aufgrund der durch die Abbiegeverbote nötigen Änderungen zunächst zeigen, dass die gewählten Schätzfunktion die beiden oben genannten Bedingungen erfüllen. \todo{Genauer auf meine Ergebnisse eingehen.} In den anschließenden Tests zeigte sich, dass vor allem der ALT-Algorithmus die Laufzeit bei geeigneter Wahl der Landmarken deutlich verkürzt. Eine weitere Verbesserung konnte ich schließlich durch Kombination des A*-Algorithmus mit dem Bidirektionalen Ansatz erreichen. \todo{Hier noch näher darauf eingehen?}
+
+% \paragraph{Stichpunkte}
+% \label{sec:stichpunkte-2}
+% \begin{itemize}
+% \item Prinzip von Routing-Algorithmen und Beschreibung des Dijkstra-Algorithmus und Ergebnis
+% \item Prinzip der Bidirektionalen Suche und Ergebnis
+% \item Prinzip von Heuristiken, verschiedene Heuristiken und Ergebnis
+% \end{itemize}
+
+
+\subsubsection{Mapmatching-Algorithmen}
+\label{sec:mapm-algor}
+
+
+
+\newpage
+\subsubsection{Stichpunkte}
+\label{sec:stichpunkte-1}
 
 \begin{itemize}
 \item Einarbeitungsphase

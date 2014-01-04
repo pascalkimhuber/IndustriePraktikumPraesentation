@@ -11,6 +11,15 @@
      "sec:uberbl-und-einord"
      "sec:ziels-des-prakt"
      "sec:tatigk-und-arbe"
+     "sec:einarbeitungsphase"
+     "sec:routing-algorithmen"
+     "sec:das-verfahren"
+     "sec:dijkstra-algorithmus"
+     "sec:bidirektionale-suche"
+     "sec:eins-von-heur"
+     "eq:1"
+     "sec:mapm-algor"
+     "sec:stichpunkte-1"
      "sec:quellen")
     (TeX-run-style-hooks
      "todonotes"
@@ -22,5 +31,6 @@
      "latex2e"
      "scrartcl10"
      "scrartcl"
-     "a4paper")))
+     "a4paper"
+     "twoside")))
 

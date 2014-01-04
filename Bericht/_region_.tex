@@ -1,7 +1,8 @@
-\message{ !name(bericht.tex)}\documentclass[a4paper, 11pt, twoside]{scrartcl}
+\message{ !name(bericht.tex)}\documentclass[twoside, a4paper]{scrartcl}
 
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel} % German output
+\usepackage[utf8]{inputenc} % Input encoding
+\usepackage{todonotes} % Notes
 
 
 
@@ -9,14 +10,220 @@
 
 \begin{document}
 
-\message{ !name(bericht.tex) !offset(30) }
+\message{ !name(bericht.tex) !offset(-3) }
+
+
+\begin{titlepage}
+  \begin{center}
+    \sf
+    Universität Bonn, Mathematisch-Naturwissenschaftliche Fakultät, Master of Science, Mathematics \\
+    \vspace{1cm}
+    \today \\
+    \vspace{3cm}
+    {\LARGE Praktikumsbericht von} \\
+    \vspace{1cm}
+    Pascal Huber (2219408), 8. Fachsemester, pascal.huber@aol.com \\
+    \vspace{2cm}
+    {\LARGE über ein Praktikum beim Fraunhofer-Institut für Eingebettete Systeme und Kommunikationstechnik ESK} \\
+    \vspace{1cm}
+    vom 15.04.2013 bis zum 27.09.2013 \\
+  \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+\label{sec:einleitung}
+
+
+
+\section{Beschreibung der Praktikumsstelle}
+\label{sec:beschr-der-prakt}
 
 Das Fraunhofer-Institut für Eingebettete Systeme und Kommunikationstechnik ESK (kurz ESK) ist Teil der Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V. 
-Diese ist die größte Organisation für anwendungsorientierte Forschung in Europa und stellt somit einen Eckpfeiler der deutschen Forschungslandschaft dar. 
+
+\todo[inline]{Kurze Einleitung und Überblick, was hier noch so kommt.}
+
+\subsection{Die Fraunhofer Gesellschaft zur Förderung der angewandten Forschung e.V.}
+\label{sec:die-fraunh-gesellsch} %
+
+Die Fraunhofer Gesellschaft sieht ihre zentrale Aufgabe in der Förderung von anwendungsorientierter Forschung zum unmittelbaren Nutzen für die Wirtschaft und zum Vorteil für die Gesellschaft. Zu diesem Zweck betreibt sie Vorlaufs- und Auftragsforschung in den Forschungsfeldern Gesundheit, Sicherheit, Kommunikation, Mobilität, Energie und Umwelt. 
+
+Die Fraunhofer Gesellschaft ist mit ungefähr 22.000 Mitarbeitern an 40 Standorten die größte Organisation für anwendungsorientierte Forschung in Europa und stellt somit einen Eckpfeiler der deutschen Forschungslandschaft dar. 
+Das gesamte Finanzvolumen der Fraunhofer Gesellschaft betrug im Jahr 2012 \todo{Fußnote mit Quelle angeben} ungefähr 1.9 Mrd. Euro, wobei der Großteil (etwa 70\%) der Erträge durch Aufträge aus der Wirtschaft und von öffentlichen Forschungsprojekten erwirtschaftet wurde. Der restliche Anteil des Forschungsvolumens erhält die Fraunhofer Gesellschaft als Grundfinanzierung von Bund und Ländern. 
+
+Intern ist die Fraunhofer Gesellschaft in 66 eigenständige Institute und einige weitere Einrichtungen unterteilt, die von einer Zentrale mit Sitz in München koordiniert werden. Die einzelnen Einrichtungen arbeiten weitestgehend unabhängig und agieren selbständig auf dem Markt. Dies betrifft auch die Finanzierung durch Auftragsforschung. \todo{Verbünde erwähnen?}
 
 
-\message{ !name(bericht.tex) !offset(31) }
+\subsection{Das Fraunhofer-Institut für Eingebettete System und Kommunikationstechnik ESK und das Geschäftsfeld Automotive} \todo{Überschrift zu lang?}
+\label{sec:das-fraunh-inst}
+
+Das ESK ging 1999 zunächst nur als kleinere Einrichtung aus der Abteilung Systemtechnik/Telekommunikation des Fraunhofer Instituts für Festkörpertechnologie und wurde im Juli 2013 endgültig in ein dauerhaftes Fraunhofer Institut überführt. Das Institut hat seinen Sitz in unmittelbarer Nähe zur Fraunhofer Zentrale in München und ist mit ungefähr 80 \todo{Quelle angeben und hinzufügen, dass die meisten Mitarbeiter Informatiker und Elektrotechniker sind} ständigen Mitarbeitern eines der kleinsten Institute der Fraunhofer Gesellschaft. \\
+Der Forschungegenstand des ESK sind Verfahren und Methoden der Informations- und Kommunikationstechnik (kurz IKT) mit Schwerpunkten auf der Adaptivität (selbstständig anpassende Systeme) von verteilten und vernetzten Systemen und Software-Methodik. \todo{Wie weit soll ich hier ins Detail gehen?} Dies umfasst beispielsweise die Konzeption und Analyse neuer Ansätze in der Softwareentwicklung für vernetzte Systeme (Parallelisierung und Multicore-Software), die Entwicklung und Verbesserung von zuverlässigen und effizienten Funknetzen in industriellen Anlagen oder im Fahrzeugbereich (M2M, Car-to-X) \todo{Hier muss noch eine Erklärung hin oder soll ich es gleich ganz weglassen?} oder die Optimierung von Software für adaptive verteilte Systeme, d.h. Systeme, die sich selbständig an Änderungen in der Umgebung oder im Ressourcenbedarf anpassen (z. Bsp. Steuergeräte im Automobilbereich). 
+\\\\
+Das ESK gliedert sich in die drei Geschäftsfelder Automotive (Fahrzeugkommunikation), Industrial Communication (Software- und Kommunikationslösungen für industrielle Anwendungen) und Telecommunication (u.a. Verbesserung von Leitungsnetzen). Meine Praktikumsstelle wurde im Rahmen des Geschäftsfeldes Automotive ausgeschrieben, weshalb ich diesen und insbesondere den Leistungsbereich \emph{Automotive Connectivity} \todo{Hervorheben? Schreiben, dass Automotive größtes Geschäftsfeld ist} näher beschreiben möchte. \\
+Um die Sicherheit und die Effizienz im Straßenverkehr zu steigern, ist eine immer stärkere Vernetzung von Fahrzeugen sowohl untereinander als auch mit der Umgebung notwendig. 
+Das Geschäftsfeld Automotive arbeitet deshalb an Hardware- und Softwarelösungen, die die Zuverlässigkeit und die Dienstqualität dieser Vernetzung gewährleisten soll und unterstützt somit Fahrzeughersteller und Dienstleister bei der Steuergeräte-Entwicklung und der Fahrzeug-Umwelt-Vernetzung (sog. Car-to-X Systeme). \\
+In diesem Rahmen entwickelt der Leistungsbereich Automotive Connectivity Software-Frameworks, die die aus der Vernetzung entstehenden Daten verarbeiten und somit zum Beispiel die Integration von kooperativen Fahrerassistenzsystemen (z.Bsp. kooperativer Tempomat) ermöglichen. \todo{Zu viele Details? Ist das verständliche?}
+
+\subsection{Das Bewerbungsverfahren}
+\label{sec:das-bewerb}
+
+Nachdem ich mich zum Ende des Wintersemesters 2012/13 entschlossen hatte, im darauf folgenden Sommersemester ein mehrmonatiges Industriepraktikum zu absolvieren, machte ich mich zu Beginn der Semesterferien auf die Suche nach einem geeigneten Praktikumsplatz im Großraum München. \todo{Soll ich das lieber weglassen?} Als Hauptinfomationsquelle diente mir das Internet. Dabei fand ich unter anderem auch die Stellenausschreibung für mein späteres Praktikum auf dem Karriereportal der Fraunhofer-Gesellschaft, für das ich mich online bewerben konnte. Nur wenige Tage nach der Bewerbung wurde ich telefonisch zu einem Bewerbungsgespräch eingeladen, in dem mich mein späterer Betreuer zu meiner Motivation und meinem Vorwissen befragte und anschließend den genauen Inhalt des Praktikums darlegte. Das Gespräch hatte weniger den Charakter eines Bewerbungsgesprächs, sondern war vielmehr eine nette Unterhaltung, an dessen Ende mir der Praktikumsplatz bereits zugesichert wurde. \todo{Fahrtkosten erwähnen?} Wenige Tage nach diesem Gespräch wurde der genaue zeitliche Rahmen des Praktikums festgelegt und ich erhielt meinen Arbeitsvertrag. \todo{Soll ich noch hinzufügen welche Erfahrungen ich aus der Bewerbung mitnehme?}
+
+
+\subsection{Rahmenbedingungen des Praktikums}
+\label{sec:rahm-des-prakt}
+
+Meine Praktikumsstelle war als Vollzeitpraktikum ausgelegt, sodass ich 39 Stunden in der Woche im ESK arbeiten sollte. Es gab zwar keine festen Arbeitszeiten, allerdings mussten alle Mitarbeiter in bestimmten Kernzeiten anwesend sein. \\
+Während meines Praktikums hatte ich einen festen Betreuer, der am selben Projekt arbeitete und den ich auch schon beim Bewerbungsgespräch kennen gelernt hatte. Einen festen Besprechungstermin gab es zwar nicht, allerdings konnte ich meinen Betreuer bei Fragen problemlos persönlich oder auch per E-Mail um Rat fragen. \todo{Mehr über die Betreuung schreiben?} \\
+Da mein Praktikum über einen Zeitraum von mehr als fünf Monaten ging, erhielt ich einen eigenen Arbeitsplatz in einem der Praktikantenräume des ESK. Neben mir arbeiteten ungefähr 20 weitere Studenten als Hilfskräfte oder schrieben ihre Abschlussarbeiten im Institut, sodass die Praktikantenräume immer sehr gut gefüllt waren. \todo{Doofe Formulierung... der ganze Abschnitt gefällt mir nicht} 
+\todo{Auch über Urlaubstage und Aufwandsentschädigung schreiben? (Habe ich im Internet gelesen...)}
+
+
+
+\section{Aufgaben und Tätigkeiten - Ablauf des Praktikums} \todo{Überschrift ändern?}
+\label{sec:aufg-und-tatigk}
+
+
+\subsection{Überblick und Einordnung der Praktikumstätigkeit}
+\label{sec:uberbl-und-einord}
+
+Wie bereits beschrieben entwickelt der Leistungsbereich Automotive Connectivity Systeme zur Vernetzung von Fahrzeugen untereinander und mit der Umwelt, also sogenannte Car-to-X Systeme. Ziel solcher Systeme ist eine gesteigerte Verkehrssicherheit und -effizienz durch die Ermöglichung\todo{Ermöglichung klingt komisch} neuer Dienste wie personalisiertes Routing, eine genauere Erfassung der Verkehrslage und die Integration von kooperativen Fahrerassistenzsystemen. \\
+Neben einer zuverlässigen und leistungsstarken Datenübertragung benötigen Car-to-X System auch eine Vielzahl von Algorithmen, die die gewonnenen Daten in Relation zueinander setzen und für spätere Anwendungen weiterverarbeiten. Ein wichtiger Baustein in diesem Kontext ist die Integration von Kartendaten zur Integration von Navigationsinformationen. \\
+Im Rahmen meines Praktikums sollte ich an dieser Stelle ansetzen und für das vom ESK entwickelte \emph{ezCar2X} Software-Framework kartenbezogene Algorithmen auswählen, implementieren und testen. Diese Algorithmen sollen die Verwendung von Kartenmaterial zu Navigations- und Routingzwecken ermöglichen. 
+Das ezCar2X Projekt besteht dabei aus einer Sammlung von C++-Bibliotheken, die eine zügige Erstellung von prototypischen Anwendungen für Car-to-X Systeme ermöglichen soll. Mögliche Abnehmer sind dabei beispielsweise  Fahrzeughersteller oder Zulieferer von Verkehrsinfrastruktur. \\\\
+\todo{Zwei Projekte ansprechen, in der das Software-Framework voraussichtlich Verwendung findet? (Mobincity, ACM)}
+
+
+\subsection{Zielsetzung  und nähere Beschreibung der Praktikumstätigkeit}
+\label{sec:ziels-des-prakt}
+
+
+Ziel meines Praktikums war die Erweiterung des ezCar2X Software-Frameworks um kartenbezogene Algorithmen zur Ermöglichung von positions- und navigationsbezogenen Anwendungen. Dabei sollte ich einige einfache Vertreter dieser Algorithmen implementieren, die als Basis für komplexere Verfahren dienen sollen. \todo{Komische Formulierung? Grammatik?} Unter kartenbezogenen Algorithmen versteht man dabei im Wesentlichen zwei Arten von Algorithmen \todo{Wiederholung Algorithmen}. Auf der einen Seite werden Mapmatching-Verfahren benötigt, die die Fahrzeugposition auf einer gegebenen digitalen Karte abbilden. Dazu werden Positionsinformation (GPS-Position) mit vorhandenem Kartenmaterial in Beziehung gebracht. Auf der anderen Seite sind Routing-Algorithmen notwending, um die nach einem vorgegebenen Kriterium beste Route zum Ziel zu errechnen. \\
+Im Zuge meines Praktikums sollte ich mich zunächst einen Überblick über mögliche Mapmatching- und Routing-Algorithmen machen und anschließend eine Auswahl solcher Algorithmen implementieren und testen. Parallel wurde von meinem Betreuer ein Verwaltungssystem für digitale Kartendaten implemetiert, auf das sich die von mir geschriebenen Algorithmen stützen sollten und bei dem ich ihn gegebenenfalls unterstützen sollte. Das Kartenmaterial für dieses Verwaltungssystem stammt vom OpenStreetMap-Projekt, welches den Vorteil hat, dass die Daten sehr vielfältig und präzise und gleichzeitig lizenzkostenfrei sind. \todo{Grammatik falsch?} \\
+Da meine Betreuer und ich die einzigen Mitarbeiter waren, die sich mit der Integration von kartenbezogenen Anwendungen befassten, war es fast vollständig mir überlassen, welche Schwerpunkte ich setzen und welche Funktionalitäten ich implementieren sollte. \todo{Ist dieser letzte Satz vielleicht unnötig?}
+
+
+% \begin{itemize}
+% \item Erklärung von kartenbezogenen Algorithmen
+% \item Bestehendes Interface
+% \item Wer hat außerdem am Projekt mitgearbeitet, wie war die Zusammenarbeit
+% \item Ziele aus der Sicht der Institution
+% \item Persönliche Zielsetzung - vielleicht eher im dritten Teil? 
+% \end{itemize}
+
+
+\subsection{Tätigkeit und Arbeitsergebnisse}
+\label{sec:tatigk-und-arbe}
+
+\subsubsection{Einarbeitungsphase}
+\label{sec:einarbeitungsphase}
+
+\todo{Ist dieser Abschnitt notwendig?} Bevor ich mit der eigentlichen Arbeit, also der Auswahl und Implementierung der Algorithmen anfangen konnte, musste ich zunächst meinen Arbeitsplatz einrichten und mir einen Überblick über die für mich relevanten Teile des ezCar2X-Frameworks machen. Nachdem ich mich mit dem bestehenden Source-Code vertraut gemacht hatte, begann ich eine Übersicht von möglichen Routing- und Mapmatching-Algorithmen zu erstellen, die mir als Grundlage für meine Arbeit dienen sollte. Dabei bezog ich meine Informationen hauptsächlich aus wissenschaftlichen Papern\todo{"Wissenschaftliche Paper" klingt komisch}, die ich im Internet fand und aus Gesprächen mit meinem Betreuer, der bereits in seiner Studienzeit viel mit Mapmatching-Verfahren gearbeitet hatte\todo{Grammatik falsch? Satz unnötig?}. 
+% \paragraph{Stichpunkte}
+% \label{sec:stichpunkte}
+% \begin{itemize}
+% \item Computer einrichten
+% \item Mit bestehendem Repository vertraut machen
+% \item Überblick zu Mapmatching- und Routing Algorithmen machen
+% \end{itemize}
+
+
+\subsubsection{Routing-Algorithmen}
+\label{sec:routing-algorithmen}
+
+Um mir den Einstieg in die Programmierarbeit zu erleichtern, entschied ich mich mit der Implementierung der Routing-Algorithmen zu beginnen, da ich das grundlegende Verfahren, nämlich \todo{"Nämlich" hört sich doof an} den Dijkstra-Algorithmus schon aus meinem Studium kannte. Im Folgenden möchte ich zunächst die Grundidee des Routing-Verfahrens vorstellen und anschließend kurz auf die von mir implementierten Algorithmen eingehen. 
+
+\paragraph{Das Verfahren}
+\label{sec:das-verfahren}
+
+Die Aufgabe eines Routing-Algorithmus ist die Bestimmung einer 'besten' Route zwischen zwei gegebenen Positionen. Die Güte einer Route wird hierbei durch ein zuvor festgelegtes Kriterium definiert, meistens handelt es sich dabei entweder um die Reisezeit oder die Gesamtlänge der Route. \\
+Mathematisch gesehen wird das Straßennetz als Graph aufgefasst, in dem die Knoten die Kreuzungen und die Kanten die dazwischen liegenden Straßenabschnitte repräsentieren. Jeder Kante wird anschließend ein (ein nicht-negatives) Gewicht zugeordnet, das sich aus dem zuvor gewählten Kriterium ableitet, beispielsweise die Länge des Straßenabschnitts in Metern. Zur Bestimmung des besten Weges zwischen zwei Positionen wird nun ein von der Startposition ausgehender Dijkstra-Algorithmus verwendet.\\
+Da im Prinzip alle Routing-Algorithmen auf diesem einfachen Verfahren aufbauen, möchte ich kurz die wesentlichen Schritte des Dijkstra-Algorithmus in Erinnerung rufen. Die Grundidee des Algorithmus ist es, im jeden Schritt immer der Kante zu folgen, die zu diesem Zeitpunkt das geringste Gesamtgewicht zum Startknoten besitzt. Im einzelnen werden folgende Schritte ausgeführt:
+\todo{Vielleicht richtiger Pseudo-Code oder sogar einfach weglassen? Relaxation benennen?}
+\begin{enumerate}\sffamily\small
+\item Weise dem Startknoten ein Gesamtgewicht von $0$ und allen anderen Knoten ein Gesamtgewicht von $\infty$ zu.
+\item Solange der Zielknoten nicht besucht wurde, wähle unter allen unbesuchten Knoten denjenigen mit dem geringsten Gesamtgewicht aus. 
+  \begin{enumerate}
+  \item[a.] Markiere den ausgewählten Knoten als 'besucht'.
+  \item[b.] Berechne für alle unbesuchten Nachbarknoten die Summe aus dem aktuellen Gesamtgewicht und den Kosten der verbindenden Kante.
+  \item[c.] Falls das Gesamtgewicht eines unbesuchten Nachbarknoten größer als die berechnete Summe ist, ersetze es durch die Summe und aktualisiere den Vorgänger.
+  \end{enumerate}
+\end{enumerate}
+
+\paragraph{Dijkstra-Algorithmus}
+\label{sec:dijkstra-algorithmus}
+
+Bei der Implementierung des Dijkstra-Algorithmus musste ich den obigen Algorithmus an ein paar Besonderheiten beim Routing in Straßennetzen anpassen. Das größte Problem stellten dabei Abbiegeverbote dar. Da in diesem Fall Paare von Kanten betrachtet werden müssen, änderte ich den Algorithmus dahingehend, dass dieser nicht nur Knoten sondern Knoten-Kanten-Paare betrachtet. Der resultierende Algorithmus lieferte schließlich korrekte Ergebnisse. 
+\\
+\todo{Dieser Satz gefällt mir nicht!} Das Hauptproblem der Dijkstra-Suche besteht darin, dass der Algorithmus einen großen Suchraum (Menge der besuchten Knoten) betrachten muss, was zu hohen Laufzeiten führt. Die eigentliche Schwierigkeit beim Routing besteht also darin, den Dijkstra-Algorithmus mit Hilfe von Zusatzinformationen so zu verbessern, dass einerseits die Korrektheit des Algorithmus gewahrt bleibt und andererseits die Laufzeit verringert wird. 
+
+\paragraph{Bidirektionale Suche}
+\label{sec:bidirektionale-suche}
+
+Als ersten Ansatz zur Reduktion der Laufzeit wählte ich das Verfahren der bidirektionalen Suche. Dabei wird zusätzlich zu der obigen Dijkstra-Suche simultan eine weitere von der Zielposition ausgehende Suche durchgeführt. Der Algorithmus terminiert sobald ein Knoten sowohl von der Vorwärts- als auch von der Rückwärtssuche besucht wurde. Dieses Verfahren halbiert den Suchraum und verringert entsprechend die Laufzeit. Bei der Implementierung stellte sich vor allem die korrekte Formulierung des Abbruchkriteriums als schwierig heraus, da ich aufgrund der Abbiegeverbote wie im einfachen Dijkstra-Algorithmus Knoten-Kanten-Paare betrachten musste. 
+
+\paragraph{ A*-Algorithmus}
+\label{sec:eins-von-heur}
+
+Ein effektiverer Weg die Laufzeit des Dijkstra-Algorithmus zu verringern ist der Einsatz von Schätzfunktionen (Heuristiken), die zusätzliche Informationen (zum Beispiel geographische Positionen) \todo{Bemerkung in Klammer unnötig?} verwenden, um den Suchraum zu verkleinern. Der resultierende Algorithmus wird A*-Algorithmus genannt.\\
+Intern wählt der Dijkstra-Algorithmus im jeden Schritt denjenigen unbesuchten Knoten $v$ mit den geringsten Gesamtkosten $c(v)$ aus (siehe 2. im Algorithmus von \ref{sec:das-verfahren}). Der A*-Algorithmus dagegen berücksichtigt zusätzlich dazu eine Schätzfunktion $h(v)$, sodass derjenige Knoten besucht wird, für den die Summe $c(v) + h(v)$ am kleinsten ist. Diese Schätzfunktion soll die verbleibenden Kosten von $v$ bis zur Zielposition abschätzen und damit diejenigen Knoten $v$ bevorzugen, die im Sinne der gewählten Heuristik am wahrscheinlichsten auf einer besten Route liegen. 
+
+
+
+
+\paragraph{Stichpunkte}
+\label{sec:stichpunkte-2}
+\begin{itemize}
+\item Prinzip von Routing-Algorithmen und Beschreibung des Dijkstra-Algorithmus und Ergebnis
+\item Prinzip der Bidirektionalen Suche und Ergebnis
+\item Prinzip von Heuristiken, verschiedene Heuristiken und Ergebnis
+\end{itemize}
+
+
+\subsubsection{Stichpunkte}
+\label{sec:stichpunkte-1}
+
+\begin{itemize}
+\item Einarbeitungsphase
+\item Routing-Algorithmen (Beschreibung, Definition, implementierte Algorithmen, Probleme und Lösungen)
+\item Mapmatching-Algorithmen (Beschreibung, Definition, implementierte Algorithmen, Probleme und Lösungen)
+\item Weitere Tätigkeiten
+\item Gesamtergebnisse
+\end{itemize}
+
+
+% *** Umfeld der Praktikumstätigkeit
+% - An welchen Aufgaben habe ich gearbeitet?
+% - Wozu sind die Tätigkeiten/Projekte da?
+% - Wer hat außerdem an diesen Aufgaben gearbeitet?
+% - Wie eng war die Zusammenarbeit?
+
+% *** Aufgabe und Ziel
+% - Was war meine Aufgabe aus der Sicht der Institution?
+% - Was sollte/wollte ich im Verlauf des Praktikums erreichen?
+
+
+% *** Tätigkeit und Arbeitsergebnisse (ausführlichster Abschnitt?)
+% - Was habe ich in der Zeit des Praktikums getan?
+% - Welche Schwierigkeiten gab es, welche starken Phasen?
+% - Was ist das Gesamtergebnis? Verhältnis zu den Zielen?
+% - Welche Kompetenzen konnte ich einbringen?
+
+
+
+
+\section{Quellen}
+\label{sec:quellen}
+
+- Homepage der Fraunhofer Gesellschaft: www.fraunhofer.de
+
 
 \end{document}
 
 
+
+\message{ !name(bericht.tex) !offset(-229) }
