@@ -1,8 +1,8 @@
-\documentclass[twoside, a4paper]{scrartcl}
+\documentclass[a4paper]{scrartcl}
 
 \usepackage[ngerman]{babel} % German output
 \usepackage[utf8]{inputenc} % Input encoding
-\usepackage{todonotes} % Notes
+\usepackage[textsize=tiny]{todonotes} % Notes
 
 
 
@@ -27,6 +27,10 @@
   \end{center}
 \end{titlepage}
 
+\newpage
+
+\setcounter{page}{1}
+
 
 \tableofcontents
 \newpage
@@ -37,7 +41,7 @@
 
 
 \section{Beschreibung der Praktikumsstelle}
-\label{sec:beschr-der-prakt}
+\label{sec:beschr-der-prakt}    
 
 Das Fraunhofer-Institut für Eingebettete Systeme und Kommunikationstechnik ESK (kurz ESK) ist Teil der Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V. 
 
@@ -167,15 +171,15 @@ Als ersten Ansatz zur Reduktion der Laufzeit wählte ich das Verfahren der bidir
 \label{sec:eins-von-heur}
 
 Ein effektiverer Weg die Laufzeit des Dijkstra-Algorithmus zu verringern ist der Einsatz von Schätzfunktionen (Heuristiken), die zusätzliche Informationen (zum Beispiel geographische Positionen) \todo{Bemerkung in Klammer unnötig?} verwenden, um den Suchraum zu verkleinern. Der resultierende Algorithmus wird A*-Algorithmus genannt.\\
-Intern wählt der Dijkstra-Algorithmus im jeden Schritt denjenigen unbesuchten Knoten $v$ mit den geringsten Gesamtkosten $c(v)$ aus (siehe 2. im Algorithmus von \ref{sec:das-verfahren}). Der A*-Algorithmus dagegen berücksichtigt zusätzlich dazu eine Schätzfunktion $h(v)$, sodass derjenige Knoten besucht wird, für den die Summe 
+Wie in Abschnitt \ref{sec:das-verfahren} gesehen, wählt der Dijkstra-Algorithmus intern im jeden Schritt denjenigen unbesuchten Knoten $v$ mit den geringsten Gesamtkosten $c(v)$ aus. Der A*-Algorithmus dagegen berücksichtigt zusätzlich zu diesen Gesamtkosten eine Schätzfunktion $h(v)$, sodass derjenige Knoten besucht wird, für den die Summe 
 \begin{equation}
   \label{eq:1}
   c(v) + h(v)   
 \end{equation}
 am kleinsten ist. Die Schätzfunktion $h(v)$ soll die verbleibenden Kosten von $v$ bis zur Zielposition abschätzen und damit diejenigen Knoten $v$ bevorzugen, die im Sinne der gewählten Heuristik am wahrscheinlichsten auf einer besten Route liegen. \\
-Damit der A*-Algorithmus ein korrektes Ergebnis liefert, muss die Heuristik $h(v)$ zwei Bedingungen erfüllen. Auf der einen Seite darf sie die benötigten Gesamtkosten um von $v$ zum Zielknoten $b$ zu gelangen nicht überschätzen, d.h. es muss gelten $h(v) \leq dist_c(v,b)$ und auf der anderen Seite muss eine Art Dreiecksungleichung erfüllt sein. \\
+Damit der A*-Algorithmus ein korrektes Ergebnis liefert, muss die Heuristik $h(v)$ zwei Bedingungen erfüllen: \todo{Diesen Abschnitt etwas klarer aufschreiben}Auf der einen Seite darf sie die benötigten Gesamtkosten um von $v$ zum Zielknoten $b$ zu gelangen nicht überschätzen, d.h. es muss gelten $h(v) \leq dist_c(v,b)$ und auf der anderen Seite muss eine gewisse Dreiecksungleichung erfüllt sein. \\
 Für mein Praktikum wählte ich als Heuristik zum einen die euklidische Distanz zwischen $v$ und $b$ und zum anderen eine Schätzfunktion die auf vorberechneten Kosten von zuvor zufällig gewählten Knoten, sogenannten Landmarken beruht (ALT-Algorithmus). \todo{Muss ich hier mehr ins Detail gehen?} 
-Bevor ich diese Heuristiken implementieren konnte, musste ich aufgrund der durch die Abbiegeverbote nötigen Änderungen zunächst zeigen, dass die gewählten Schätzfunktion die beiden oben genannten Bedingungen erfüllen. \todo{Genauer auf meine Ergebnisse eingehen.} In den anschließenden Tests zeigte sich, dass vor allem der ALT-Algorithmus die Laufzeit bei geeigneter Wahl der Landmarken deutlich verkürzt. Eine weitere Verbesserung konnte ich schließlich durch Kombination des A*-Algorithmus mit dem Bidirektionalen Ansatz erreichen. \todo{Hier noch näher darauf eingehen?}
+Bevor ich diese Heuristiken implementieren konnte, musste ich aufgrund der durch die Abbiegeverbote nötigen Änderungen zunächst zeigen, dass die gewählten Schätzfunktion die beiden oben genannten Bedingungen erfüllen. \todo{Genauer auf meine Ergebnisse eingehen.} In den anschließenden Tests zeigte sich, dass vor allem der ALT-Algorithmus die Laufzeit bei geeigneter Wahl der Landmarken deutlich verkürzt. Eine weitere Verbesserung konnte ich schließlich durch Kombination des A*-Algorithmus mit der bidirektionalen Suche erreichen. \todo{Hier noch näher darauf eingehen?}
 
 % \paragraph{Stichpunkte}
 % \label{sec:stichpunkte-2}
@@ -189,20 +193,69 @@ Bevor ich diese Heuristiken implementieren konnte, musste ich aufgrund der durch
 \subsubsection{Mapmatching-Algorithmen}
 \label{sec:mapm-algor}
 
+Damit ein Routing-Algorithmus die beste Route zu einem gegebenen Zielpunkt berechnen kann, muss zunächst bestimmt werden, an welcher Position der digitalen Karte sich das zu routende Fahrzeug befindet. Da sowohl das Kartenmaterial als auch die Positionsinformationen (in den meisten Fällen GPS-Daten) mit Fehlern behaftet sind, sind spezielle Verfahren notwendig, um die Positionsdaten mit dem vorhandenen Kartenmaterial abzugleichen. Solche Verfahren werden Map Matching \todo{Schreibweise von Map-Matching im gesamten Dokument verbessern} Algorithmen genannt. 
+\\\\
+Das Ziel eines Map Matching Algorithmus ist es also, für eine gegebene Abfolge von gemessenen Positionsdaten (GPS-Track) eine entsprechende Folge von bereinigten Positionen, sogenannten Match-Punkten zu finden. Dazu wird zunächst jeder Position des GPS-Tracks ein Straßenabschnitt der digitalen Karte zugeordnet und anschließend durch Projektion auf diesen Abschnitt der Match-Punkt bestimmt. Hierbei stellt sich vor allem die Wahl des richtigen Straßenabschnitts als schwierig heraus. \\
+Im Gegensatz zum Routing gibt es beim Map Matching eine große Anzahl von verschiedenen Lösungsansätzen, die von einfachen geometrischen Verfahren, über topologische Algorithmen bis hin zu komplexeren Methoden, die Kalman Filter oder Fuzzy Logic verwenden, gehen. \todo{Satzkonstruktion unschön.}
+\\\\
+Aus Zeitgründen einigten mein Betreuer und ich mich darauf, dass ich zunächst ein paar einfache geometrische Verfahren und anschließend zwei topologische Map Matching Algorithmen implementieren sollte. Da mein Betreuer seine Diplomarbeit über dieses Thema geschrieben hatte, konnte er mich mit den nötigen wissenschaftlichen Artikeln zu diesem Thema versorgen, sodass mir eine langwierige Einarbeitungsphase erspart blieb.\\
+Im folgenden möchte ich einen kurzen Überblick über die von mir implementierten Map Matching Verfahren geben. \todo{Soll ich noch aufschreiben, dass ich im Gegensatz zum Routing erst noch Testfälle für das Map Matching heraussuchen musste?}
 
 
-\newpage
-\subsubsection{Stichpunkte}
-\label{sec:stichpunkte-1}
+\paragraph{Point-To-Node Map Matcher} \todo{Ist das zu viel, wenn ich über jeden einzelnen Map-Matcher schreiben?}
+\label{sec:point-node-map}
 
-\begin{itemize}
-\item Einarbeitungsphase
-\item Routing-Algorithmen (Beschreibung, Definition, implementierte Algorithmen, Probleme und Lösungen)
-\item Mapmatching-Algorithmen (Beschreibung, Definition, implementierte Algorithmen, Probleme und Lösungen)
-\item Weitere Tätigkeiten
-\item Gesamtergebnisse
-\end{itemize}
+Das einfachste Map Matching Verfahren ordnet jeder Position eines GPS-Tracks denjenigen Knoten des Straßennetzes zu, der die geringste Distanz zu dieser Position besitzt. Ein solches Verfahren wird Point-To-Node Map Matching genannt. Die Implementierung dieses Map Matchers war unkompliziert, allerdings zeigte sich schon nach wenigen Beispielanwendungen, dass die gelieferten Ergebnisse mehr als unbefriedigend waren. Grund hierfür ist, dass der Point-To-Node Map Matcher nicht die Abfolge der einzelnen Positionen des GPS-Tracks berücksichtigt und deshalb öfters zwischen unzusammenhängenden Straßenabschnitten hin und her springt. Darüber hinaus ist dieses Verfahren sehr stark von der Anzahl der Knoten im Kartenmaterial abhängig. Dies wird durch den Point-To-Road Map Matcher behoben. 
 
+
+\paragraph{Point-To-Road Map Matcher}
+\label{sec:point-road-map}
+
+Im Gegensatz zum Point-To-Node Map Matcher bestimmt dieses Verfahren zunächst die Entfernung zu allen umliegenden Straßenabschnitten und wählt schließlich den Abschnitt mit der kleinsten Distanz aus. Anschließend wird durch Projektion der Match-Punkt auf dem gewählten Straßenabschnitt bestimmt. 
+Dieses Verfahren berücksichtigt zwar auch nicht die zeitliche Abfolge der GPS-Punkte, lieferte allerdings in den Tests deutlich bessere Ergebnisse als der Point-To-Node Map Matcher. Die meisten Probleme traten dabei in der Nähe von Kreuzungen oder bei dicht beieinander liegenden Straßen auf. \\
+Die Implementierung des Point-To-Road Map Matchers war im Vergleich zu der des vorhergehenden Algorithmus aufwendiger, was vor allem an der Berechnung der Projektionen auf die Straßenabschnitte lag. \todo{Soll ich hier noch irgendwas anderes schreiben? Ich habe das Gefühl, dass ich nicht wirklich viel über meine Arbeit schreibe!}
+
+
+\paragraph{Topologisch gewichtete Map Matcher}
+\label{sec:topol-gewicht-map}
+
+Topologische Map Matcher beziehen neben rein geometrischen Informationen auch die Topologie des Straßennetzes in den Map Matching Prozess mit ein. Unter Topologie versteht man hierbei alle Informationen die den Zusammenhang von Straßenabschnitten untereinander beschreiben. Dadurch wird auch die Abfolge der Positionen im GPS-Track berücksichtigt. \\
+Im einzelnen gehen topologische Map Matching Algorithmen wie folgt vor. Zunächst wird durch eine Radiussuche um die aktuelle GPS-Position eine Menge von möglichen Straßenabschnitten bestimmt. Anschließend erhält jeder dieser Kandidaten \todo{Falsches Wort?} ein Gewicht, das durch die Geometrie, die Topologie und weiteren Kriterien berechnet wird. Der Straßenabschnitt mit dem geringsten Gewicht wird schließlich ausgewählt und der Match-Punkt wie im Point-To-Road Map Matcher bestimmt. Die beiden von mir implementierten Map Matching Algorithmen bezogen \todo{oder beziehen?} für die Gewichtsberechnung zusätzlich die Geschwindigkeit und den Kurs des Fahrzeugs sowie Informationen zu Abbiegeverboten und Einbahnstraßen mit ein. \todo{Ich habe noch einen weiteren ähnlichen Map Matcher geschrieben, soll ich den auch noch beschreiben?}
+\todo{Weitere Tätigkeiten beschreiben?}
+
+% \paragraph{Stichpunkte}
+% \label{sec:stichpunkte-3}
+
+% \begin{itemize}
+% \item Erklärung der Problemstellung beim Map Matching \todo{Verbessere die Schreibweise von Map Matching im gesamten Dokument}
+%   \begin{itemize}
+%   \item Motivation
+%   \item Erklärung
+%   \item Probleme
+%   \item Ansätze zur Lösung
+%   \end{itemize}
+% \item Suche nach Test-Szenarien
+% \item Beschreibung der von mir implementierten Map Matching Verfahren
+%   \begin{itemize}
+%   \item Point-To-Road
+%   \item Point-To-Node
+%   \item Topologisch gewichteter Map Matcher
+%   \item MHT Map Matcher         
+%   \end{itemize}
+% \end{itemize}
+
+
+
+% \subsubsection{Stichpunkte}
+% \label{sec:stichpunkte-1}
+
+% \begin{itemize}
+% \item Einarbeitungsphase
+% \item Routing-Algorithmen (Beschreibung, Definition, implementierte Algorithmen, Probleme und Lösungen)
+% \item Mapmatching-Algorithmen (Beschreibung, Definition, implementierte Algorithmen, Probleme und Lösungen)
+% \item Weitere Tätigkeiten
+% \item Gesamtergebnisse
+% \end{itemize}
 
 % *** Umfeld der Praktikumstätigkeit
 % - An welchen Aufgaben habe ich gearbeitet?
@@ -214,7 +267,6 @@ Bevor ich diese Heuristiken implementieren konnte, musste ich aufgrund der durch
 % - Was war meine Aufgabe aus der Sicht der Institution?
 % - Was sollte/wollte ich im Verlauf des Praktikums erreichen?
 
-
 % *** Tätigkeit und Arbeitsergebnisse (ausführlichster Abschnitt?)
 % - Was habe ich in der Zeit des Praktikums getan?
 % - Welche Schwierigkeiten gab es, welche starken Phasen?
@@ -222,7 +274,7 @@ Bevor ich diese Heuristiken implementieren konnte, musste ich aufgrund der durch
 % - Welche Kompetenzen konnte ich einbringen?
 
 
-
+\newpage
 
 \section{Quellen}
 \label{sec:quellen}

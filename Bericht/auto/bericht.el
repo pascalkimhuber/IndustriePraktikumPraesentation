@@ -19,11 +19,13 @@
      "sec:eins-von-heur"
      "eq:1"
      "sec:mapm-algor"
-     "sec:stichpunkte-1"
+     "sec:point-node-map"
+     "sec:point-road-map"
+     "sec:topol-gewicht-map"
      "sec:quellen")
     (TeX-run-style-hooks
      "todonotes"
-     ""
+     "textsize=tiny"
      "inputenc"
      "utf8"
      "babel"
@@ -31,6 +33,5 @@
      "latex2e"
      "scrartcl10"
      "scrartcl"
-     "a4paper"
-     "twoside")))
+     "a4paper")))
 
