@@ -40,7 +40,7 @@
 - Arbeitszeiten
 
 
-** TODO Aufgaben und Tätigkeiten - Der Ablauf des Praktikums
+** DONE Aufgaben und Tätigkeiten - Der Ablauf des Praktikums
 
 *** Umfeld der Praktikumstätigkeit
 - An welchen Aufgaben habe ich gearbeitet?
@@ -78,7 +78,21 @@
 - Wird sich aufgrund der Praktikumserfahrung mein Studienverhalten ändern?
 - Anregung für zukünftige Praktikanten?
 
+*** Fazit und Bewertung des Praktikums
+
+1. Gesamtbewertung des Praktikums
+   - guter Einblick in Forschungsarbeit
+   - persönliches Ziel: besser Programmieren erreicht
+   - angenehme Arbeitsatmosphäre
+   - selbstständiges Arbeiten
+2. Persönliche Schlussfolgerungen
+   - Umgang mit Computer verbessern
+   - Anstellung bei der Fraunhofer Gesellschaft vorstellbar (evtl. im Rahmen einer Promotion)
+   - Themengebiet zu Informatik lastig 
+
 ** TODO Anhang
+
+Ist ein Anhang notwendig?
 
 *** Quellen
 

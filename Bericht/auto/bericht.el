@@ -22,6 +22,9 @@
      "sec:point-node-map"
      "sec:point-road-map"
      "sec:topol-gewicht-map"
+     "sec:bewert-des-prakt"
+     "sec:fachlicher-bezug-zum"
+     "sec:fazit-und-bewertung"
      "sec:quellen")
     (TeX-run-style-hooks
      "todonotes"
